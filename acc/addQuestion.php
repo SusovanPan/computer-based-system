@@ -23,8 +23,7 @@
                 <option value="<?php echo $rows['sec_id']; ?>"><?php echo $rows['sec_name']; ?></option>
               <?php
                 }
-                  }
-                  ?> 
+                  }?> 
           </select>
         </div>
 
