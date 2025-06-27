@@ -241,6 +241,8 @@ $(document).ready(function () {
             { title: "Q. Id" },
             { title: "Course" },
             { title: "Section" },
+            { title: "Level" },
+            { title: "Blooms's Level" },
             { title: "Question" },
             { title: "Option1" },
             { title: "Option2" },
@@ -321,6 +323,25 @@ $(document).ready(function () {
                     const isSelected = section.sec_id == data.q_section ? 'selected' : '';
                     sectionSelect.append(`<option value="${section.sec_id}" ${isSelected}>${section.sec_name}</option>`);
                 });
+
+
+                const levelSelect = $('#edit_q_level');
+                levelSelect.empty();
+
+                data.levels.forEach(level => {
+                    const isSelected = level.question_level_id == data.q_level ? 'selected' : '';
+                    levelSelect.append(`<option value="${level.question_level_id}" ${isSelected}>${level.question_level_name}</option>`);
+                });
+
+                
+                const bloomslevelSelect = $('#edit_q_blooms_level');
+                bloomslevelSelect.empty();
+
+                data.bloomslevels.forEach(bloomslevel => {
+                    const isSelected = bloomslevel.question_bloomslevel_id == data.q_blooms_level ? 'selected' : '';
+                    bloomslevelSelect.append(`<option value="${bloomslevel.question_bloomslevel_id}" ${isSelected}>${bloomslevel.question_bloomslevel_name}</option>`);
+                });
+
 
                 new bootstrap.Modal(document.getElementById('editQuestionModal')).show();
             }
@@ -515,6 +536,8 @@ $(document).ready(function () {
     const formData = {
       section: $('#section').val(),
       course: $('#course').val(),
+      q_level: $('#q_level').val(),
+      q_blooms_level: $('#q_blooms_level').val(),
       question: $('#question').val(),
       optionA: $('#optionA').val(),
       optionB: $('#optionB').val(),

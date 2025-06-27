@@ -16,7 +16,7 @@
             <div class="form-text">
               <strong>Required Format:</strong>
                 <div class="mt-2 p-2 bg-light border rounded small font-monospace">
-                course_id | section_id | question | option1 | option2 | option3 | option4 | correct_answer
+                course_id | section_id | q_level | q_blooms_level |question | option1 | option2 | option3 | option4 | correct_answer
                 </div>
                 <div class="mt-2">
                   Download Sample Excel <a href="/cbt/assets/samples/sample_questions.xlsx" download class="link-primary">
@@ -163,6 +163,20 @@
         <div class="mb-2">
           <label for="edit_q_section">Section:</label>
           <select class="form-control" name="q_section" id="edit_q_section">
+            <!-- Options will be populated dynamically -->
+          </select>
+        </div>
+
+        <div class="mb-2">
+          <label for="edit_q_level">Question level:</label>
+          <select class="form-control" name="q_level" id="edit_q_level">
+            <!-- Options will be populated dynamically -->
+          </select>
+        </div>
+
+        <div class="mb-2">
+          <label for="edit_q_blooms_level">Blooms Level:</label>
+          <select class="form-control" name="q_blooms_level" id="edit_q_blooms_level">
             <!-- Options will be populated dynamically -->
           </select>
         </div>

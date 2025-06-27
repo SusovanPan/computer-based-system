@@ -15,6 +15,8 @@
                             <th class="table-primary">Q. ID</th>
                             <th class="table-primary">Course</th>
                             <th class="table-primary">Section</th>
+                            <th class="table-primary">Level</th>
+                            <th class="table-primary">Bloom's Level</th>
                             <th class="table-primary">Question</th>
                             <th class="table-primary">Option 1</th>
                             <th class="table-primary">Option 2</th>

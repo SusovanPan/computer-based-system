@@ -5,6 +5,8 @@ header('Content-Type: application/json');
 $id = $_POST['q_id'];
 $course = $_POST['q_course'];
 $section = $_POST['q_section'];
+$level = $_POST['q_level'];
+$bloomslevel = $_POST['q_blooms_level'];
 $text = $_POST['q_text'];
 $op1 = $_POST['q_op1'];
 $op2=$_POST['q_op2'];
@@ -12,7 +14,7 @@ $op3 = $_POST['q_op3'];
 $op4 = $_POST['q_op4'];
 $ans=$_POST['q_ans'];
 
-$query = "UPDATE question SET q_course ='$course',q_section = '$section',q_text = '$text',q_op1 = '$op1',q_op2 ='$op2',q_op3 ='$op3',q_op4 ='$op4',q_ans ='$ans' WHERE q_id = $id";
+$query = "UPDATE question SET q_course ='$course',q_section = '$section',q_level='$level',q_blooms_level='$bloomslevel',q_text = '$text',q_op1 = '$op1',q_op2 ='$op2',q_op3 ='$op3',q_op4 ='$op4',q_ans ='$ans' WHERE q_id = $id";
 
 if (mysqli_query($con, $query)) {
     echo json_encode(['status' => 'success', 'message' => 'Question updated successfully.']);

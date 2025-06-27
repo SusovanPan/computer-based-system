@@ -1,16 +1,19 @@
 <?php
 include '../../config/db.php';
 
-$query = "SELECT * FROM question,course,section where q_course=c_id and q_section=sec_id";
+$query = "SELECT * FROM question,course,section,q_level,blooms_level where q_course=c_id and q_section=sec_id and q_level.d_id=question.q_level and blooms_level.b_id=question.q_blooms_level";
 $result = mysqli_query($con, $query);
 
 $data = [];
 
 while ($row = mysqli_fetch_assoc($result)) {
+
     $data[] = [
         $row['q_id'],
         $row['c_name'],
         $row['sec_name'],
+        $row['d_level'],
+        $row['b_level'],
         $row['q_text'],
         $row['q_op1'],
         $row['q_op2'],

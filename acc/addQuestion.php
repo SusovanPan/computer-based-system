@@ -10,6 +10,7 @@
     </div>
     <div class="card-body">
       <form id="addQuestionForm" method="POST">
+        
         <div class="mb-3">
           <label for="section" class="form-label">Section</label>
           <select class="form-select" id="section" required>
@@ -23,7 +24,7 @@
               <?php
                 }
                   }
-              ?> 
+                  ?> 
           </select>
         </div>
 
@@ -43,6 +44,41 @@
               ?> 
           </select>
         </div>
+
+        <div class="mb-3">
+          <label for="q_level" class="form-label">Question Level:</label>
+          <select class="form-select" id="q_level" required>
+            <option selected disabled value="">Select Level</option>
+              <?php
+              $query="SELECT * FROM q_level ORDER BY d_id asc";
+              $result=mysqli_query($con,$query) or die("Query Error");
+              if(mysqli_num_rows($result)>0){
+                while($rows=mysqli_fetch_assoc($result)){ ?>
+               <option value="<?php echo $rows['d_id']; ?>"><?php echo $rows['d_level']; ?></option>
+              <?php
+                }
+                  }
+              ?>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label for="q_blooms_level" class="form-label">Bloom's Level:</label>
+          <select class="form-select" id="q_blooms_level" required>
+            <option selected disabled value="">Select Level</option>
+              <?php
+              $query="SELECT * FROM blooms_level ORDER BY b_id asc";
+              $result=mysqli_query($con,$query) or die("Query Error");
+              if(mysqli_num_rows($result)>0){
+                while($rows=mysqli_fetch_assoc($result)){ ?>
+               <option value="<?php echo $rows['b_id']; ?>"><?php echo $rows['b_level']; ?></option>
+              <?php
+                }
+                  }
+              ?>
+          </select>
+        </div>
+
 
         <div class="mb-3">
           <label for="question" class="form-label">Enter the Question:</label>
@@ -85,29 +121,6 @@
   </div>
 </div>
 
-    <!-- <h1>Add Students</h1> -->
-    <!-- <div class="card border-primary mb-3">
-        <div class="card-header bg-primary text-white">Panel Heading</div>
-        <div class="card-body">
-            Panel content goes here.
-        </div>    
-    </div> -->
-    <!-- <p>Welcome to your exam management dashboard.</p> -->
-
-    <!-- <div class="dashboard-cards">
-        <div class="card">
-            <h2>Upcoming Exams</h2>
-            <p>3 exams scheduled this week</p>
-        </div>
-        <div class="card">
-            <h2>Results</h2>
-            <p>View your latest results</p>
-        </div>
-        <div class="card">
-            <h2>Profile</h2>
-            <p>Manage your profile settings</p>
-        </div>
-    </div> -->
 </div>
 
 <?php include 'common/footer.php'; ?>
