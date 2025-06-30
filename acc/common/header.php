@@ -24,11 +24,11 @@ if(!isset($_SESSION['user_id']))
 
 
     <!-- Data table -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
-    <!-- DataTables 2.3.0 -->
-    <link rel="stylesheet" href="https://cdn.datatables.net/2.3.0/css/dataTables.dataTables.min.css">
-    <script src="https://cdn.datatables.net/2.3.0/js/dataTables.min.js"></script>
+    <!-- DataTables 2.3.2 -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.3.2/css/dataTables.dataTables.min.css">
+    <script src="https://cdn.datatables.net/2.3.2/js/dataTables.min.js"></script>
 
 
     <!-- Buttons Extension for v2.3.0 -->
@@ -41,6 +41,11 @@ if(!isset($_SESSION['user_id']))
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+
+    <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.colVis.min.js"></script>
+
+    <!-- Include ColResize plugin (host your own or use CDN if available) -->
+<script src="https://cdn.jsdelivr.net/gh/Silvacom/ColResize/dataTables.colResize.min.js"></script>
 
 
     <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">

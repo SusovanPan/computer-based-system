@@ -215,3 +215,15 @@ div:where(.swal2-icon) {
     -ms-user-select: none;     /* For IE10+ */
     user-select: none;         /* Standard property */
 }
+
+#questionTable{
+    font-size: 12px;
+}
+
+#studentTable{
+    font-size: 14px;
+}
+#resultTable
+{
+    font-size: 14px;
+}

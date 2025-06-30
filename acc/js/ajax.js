@@ -1,9 +1,10 @@
+
 // Result Details //
 $(document).ready(function () {
     const table = $('#resultTable').DataTable({
         ajax: 'code/fetch_result.php',
         columns: [
-            { title: "StudentName" },
+            { title: "Student Name" },
             { title: "Result" },
             { title: "Date" },
         ],
@@ -68,25 +69,25 @@ $(document).ready(function () {
                 [
                   {
                           extend: 'csv',
-                          text: '<i class="fas fa-file-csv"></i> CSV',
+                          text: '<i class="fas fa-file-csv"></i>',
                           titleAttr: 'Export to CSV',
                           className: 'btn btn-secondary'
                       },
                       {
                           extend: 'excel',
-                          text: '<i class="fas fa-file-excel"></i> Excel',
+                          text: '<i class="fas fa-file-excel"></i>',
                           titleAttr: 'Export to Excel',
                           className: 'btn btn-success'
                       },
                       {
                           extend: 'pdf',
-                          text: '<i class="fas fa-file-pdf"></i> PDF',
+                          text: '<i class="fas fa-file-pdf"></i>',
                           titleAttr: 'Export to PDF',
                           className: 'btn btn-danger'
                       },
                       {
                           extend: 'print',
-                          text: '<i class="fas fa-print"></i> Print',
+                          text: '<i class="fas fa-print"></i>',
                           titleAttr: 'Print Table',
                           className: 'btn btn-primary'
                       } 
@@ -238,7 +239,7 @@ $(document).ready(function () {
     const table = $('#questionTable').DataTable({
         ajax: 'code/fetch_question.php',
         columns: [
-            { title: "Q. Id" },
+            { title: "Q.Id" },
             { title: "Course" },
             { title: "Section" },
             { title: "Level" },
@@ -258,30 +259,93 @@ $(document).ready(function () {
 
                 buttons: 
                 [
-                  {
+                     
+                     {
                           extend: 'csv',
-                          text: '<i class="fas fa-file-csv"></i> CSV',
+                          text: '<img src="https://cdn-icons-png.flaticon.com/512/9496/9496460.png" style="height:26px; object-fit:content; vertical-align:middle;" alt="CSV">',
                           titleAttr: 'Export to CSV',
-                          className: 'btn btn-secondary'
+                          className: 'btn btn-secondary btn-sm border-0 p-1'
                       },
                       {
                           extend: 'excel',
-                          text: '<i class="fas fa-file-excel"></i> Excel',
+                          text: '<img src="https://cdn-icons-png.flaticon.com/512/4726/4726040.png" style="height:26px; object-fit:content; vertical-align:middle;" alt="Excel">',
                           titleAttr: 'Export to Excel',
-                          className: 'btn btn-success'
+                          className: 'btn btn-success btn-sm border-0 p-1'
+                      },
+
+                      {
+                        extend: 'pdfHtml5',
+                        text: '<img src="https://cdn-icons-png.flaticon.com/512/4726/4726010.png" style="height:26px; object-fit:content; vertical-align:middle;" alt="PDF">',
+                        className: 'btn btn-danger btn-sm border-0 p-1',
+                        title: 'All Questions',
+                        orientation: 'landscape',
+                        pageSize: 'A4',
+                        exportOptions: {
+                            modifier: { page: 'all' }
+                        },
+                        customize: function (doc) {
+                            doc.defaultStyle.fontSize = 7;
+                            doc.styles.tableHeader.fontSize = 9;
+                            doc.pageMargins = [10, 10, 10, 10];
+                            doc.defaultStyle.lineHeight = 1.1;
+
+                            var colCount = doc.content[1].table.body[0].length;
+                            doc.content[1].table.widths = Array(colCount).fill('*');
+                        }
+                    },
+
+                    {
+                        extend: 'print',
+                        text: '<img src="https://cdn-icons-png.flaticon.com/512/4725/4725570.png" style="height:26px; object-fit:content; vertical-align:middle;" alt="Print">',
+                        className: 'btn btn-primary btn-sm border-0 p-1',
+                        title: 'All Questions',
+                        exportOptions: {
+                            modifier: {
+                                page: 'all'  // ✅ Print all rows
+                            }
+                        },
+                        customize: function (win) {
+                            // Inject custom styles into print window
+                            $(win.document.body).css({
+                                'font-size': '7pt',
+                                'margin': '0',
+                                'padding': '10px'
+                            });
+
+                            $(win.document.body).find('table')
+                                .addClass('compact')
+                                .css({
+                                    'font-size': 'inherit',
+                                    'width': '100%',
+                                    'table-layout': 'auto',
+                                    'border-collapse': 'collapse',
+                                    'word-wrap': 'break-word'
+                                });
+
+                            // Style all table cells
+                            $(win.document.body).find('table th, table td').css({
+                                'padding': '3px',
+                                'border': '1px solid #ccc',
+                                'vertical-align': 'top',
+                                'word-break': 'break-word'
+                            });
+
+                            // Force landscape (optional)
+                            const landscapeStyle = '@page { size: landscape; }';
+                            const head = win.document.head || win.document.getElementsByTagName('head')[0];
+                            const style = win.document.createElement('style');
+                            style.type = 'text/css';
+                            style.media = 'print';
+                            style.appendChild(win.document.createTextNode(landscapeStyle));
+                            head.appendChild(style);
+                        }
                       },
                       {
-                          extend: 'pdf',
-                          text: '<i class="fas fa-file-pdf"></i> PDF',
-                          titleAttr: 'Export to PDF',
-                          className: 'btn btn-danger'
-                      },
-                      {
-                          extend: 'print',
-                          text: '<i class="fas fa-print"></i> Print',
-                          titleAttr: 'Print Table',
-                          className: 'btn btn-primary'
-                      } 
+                         extend: 'colvis',
+                         text: '<img src="https://cdn-icons-png.flaticon.com/512/15658/15658610.png" style="height:26px; object-fit:content; vertical-align:middle;" alt="Filter">',
+                         titleAttr: 'Toggle column visibility',
+                         className: 'btn btn-info border-0 p-1 '
+                     } 
                 ]
               }
             ],

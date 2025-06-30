@@ -27,6 +27,14 @@
             <!-- <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Upload Questions</a>-->
         </ul>
     </details>
+
+    <details open>
+        <summary>Analysis</summary>
+        <ul>
+            <a href="analysis.php">Analysis</a>
+            <!-- <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Upload Questions</a>-->
+        </ul>
+    </details>
     <form class="logoutform" id="logoutForm">
         <button type="submit" class="logout-btn" id="logoutBtn">Logout</button>
     </form>

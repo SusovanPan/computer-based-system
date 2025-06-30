@@ -7,26 +7,26 @@
             <div class="card-header bg-primary text-white text-center">
             <h4 class="mb-0">Question List</h4>
         </div>
-        <div class="card-body">
+        <div class="card-body" style="padding:4px;">
             <div class="table-responsive">  
                 <table class="table table-bordered" id="questionTable" cellspacing="0">
                     <thead>
                         <tr>
-                            <th class="table-primary">Q. ID</th>
-                            <th class="table-primary">Course</th>
-                            <th class="table-primary">Section</th>
-                            <th class="table-primary">Level</th>
-                            <th class="table-primary">Bloom's Level</th>
-                            <th class="table-primary">Question</th>
-                            <th class="table-primary">Option 1</th>
-                            <th class="table-primary">Option 2</th>
-                            <th class="table-primary">Option 3</th>
-                            <th class="table-primary">Option 4</th>
-                            <th class="table-primary">Answer</th>
-                            <th class="table-primary">Operation</th>
+                            <th class="table-primary" style="font-size: 12px;"></th>
+                            <th class="table-primary" style="font-size: 12px;"></th>
+                            <th class="table-primary" style="font-size: 12px;"></th>
+                            <th class="table-primary" style="font-size: 12px;"></th>
+                            <th class="table-primary" style="font-size: 12px;"></th>
+                            <th class="table-primary" style="font-size: 12px;"></th>
+                            <th class="table-primary" style="font-size: 12px;"></th>
+                            <th class="table-primary" style="font-size: 12px;"></th>
+                            <th class="table-primary" style="font-size: 12px;"></th>
+                            <th class="table-primary" style="font-size: 12px;"></th>
+                            <th class="table-primary" style="font-size: 12px;"></th>
+                            <th class="table-primary" style="font-size: 12px;"></th>
                         </tr>
                     </thead>
-                    </table>
+                </table>
             </div>
         </div>
     </div> 

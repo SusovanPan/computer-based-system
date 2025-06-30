@@ -9,7 +9,7 @@
     <div class="page-title-actions mr-5" style="font-size: 20px;">
         <h2>Exam Panel</h2>
         <form name="cd" id="cdForm">
-            <input type="hidden" name="" id="timeExamLimit" value="1:00">
+            <input type="hidden" name="" id="timeExamLimit" value="5:00">
             <label>Remaining Time : </label>
             <input style="border:none;background-color: transparent;color:blue;font-size: 25px;" name="disp" id="timerDisplay" type="text" class="clock" size="5" readonly="true" />
         </form>

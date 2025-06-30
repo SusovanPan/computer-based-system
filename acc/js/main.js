@@ -9,3 +9,4 @@ setInterval(updateDateTime, 1000); // Update time every second
 window.onload = updateDateTime; // Initialize on load
 
 
+

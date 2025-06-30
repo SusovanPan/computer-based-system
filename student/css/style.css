@@ -235,3 +235,6 @@ div:where(.swal2-icon) {
     -ms-user-select: none;     /* For IE10+ */
     user-select: none;         /* Standard property */
 }
+.bg-gradient-primary {
+  background: linear-gradient(45deg, #007bff, #6610f2);
+}
